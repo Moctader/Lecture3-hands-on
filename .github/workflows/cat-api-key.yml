@@ -7,6 +7,7 @@ on:
 
 jobs:
   fetch_cat_image:
+    name: Fetch Cat Image Job
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
