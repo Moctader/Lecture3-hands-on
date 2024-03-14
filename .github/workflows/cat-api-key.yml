@@ -1,0 +1,27 @@
+name: Fetch Random Cat Image
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  fetch_cat_image:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install requests library
+        run: pip install requests
+
+      - name: Run Python script
+        run: |
+          python path/to/your/script.py
+        env:
+          API_KEY: ${{ secrets.live_X3bxuVnIpp1jrlaffiZGbqbR66PRgNoyanW5hhr4MjDbonSJYojZmtbYIjIHAQcg }}
