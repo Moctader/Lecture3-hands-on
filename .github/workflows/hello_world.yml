@@ -1,11 +1,9 @@
-name: Hello World
-
+name: Always Fail Action
 on: [push]
 
 jobs:
-  build:
+  fail:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Print Hello World
-      run: echo Hello, world!
+    - name: Always Fail
+      run: exit 1
