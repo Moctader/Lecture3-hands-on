@@ -1,13 +1,11 @@
-name: Always Fail on Merge to Main
+name: Hello World
 
-on:
-  pull_request:
-    types: [closed]
+on: [push]
 
 jobs:
-  fail_on_merge_to_main:
-    if: github.event.pull_request.merged && github.event.pull_request.base.ref == 'main'
+  build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Always Fail
-        run: exit 1
+    - name: Print Hello World
+      run: echo Hello, world!
