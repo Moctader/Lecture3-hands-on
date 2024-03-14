@@ -1,12 +1,12 @@
-name: Always Fail
+name: Always Fail on Merge to Main
 
 on:
-  push:
-    branches:
-      - main
+  pull_request:
+    types: [closed]
 
 jobs:
-  fail:
+  fail_on_merge_to_main:
+    if: github.event.pull_request.merged && github.event.pull_request.base.ref == 'main'
     runs-on: ubuntu-latest
     steps:
       - name: Always Fail
